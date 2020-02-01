@@ -289,7 +289,7 @@
             <div class="card profile-card w-100">
                 <div class="card-body">
                     <div class="wrapper d-flex align-items-center">
-                        <img class="profile-img profile-img-lg" src="{{ asset('images/backend_img/admin.png') }}" alt="">
+                        <img class="profile-img profile-img-lg" src="{{ asset('public/images/backend_img/admin.png') }}" alt="">
                         <div class="wrapper d-flex flex-column">
                             <h3 class="mb-0 bold ml-4">Md.Kamal Hossen</h3>
                             <small class="ml-4 text-muted">Developer</small>

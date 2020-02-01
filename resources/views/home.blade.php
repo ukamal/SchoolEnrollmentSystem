@@ -13,7 +13,7 @@
 
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
 
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -26,7 +26,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="../../index3.html" class="brand-link">
-            <img src="{{ asset('images/backend_img/admin.png') }}"
+            <img src="{{ asset('public/images/backend_img/admin.png') }}"
                  alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
                  style="opacity: .8">
@@ -202,7 +202,7 @@
 <!-- ./wrapper -->
 
 
-<script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('public/js/app.js') }}" defer></script>
 
 
 </body>

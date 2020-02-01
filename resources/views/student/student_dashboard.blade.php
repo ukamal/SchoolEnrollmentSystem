@@ -1,9 +1,7 @@
 
 @php
-$student_id=Session::get('student_id');
-$student_info=DB::table('students')->where('student_id',$student_id)
-->first();
-
+    $student_id=Session::get('student_id');
+    $student_info=DB::table('students')->where('student_id',$student_id)->first();
 @endphp
 
 <!DOCTYPE html>
@@ -17,17 +15,17 @@ $student_info=DB::table('students')->where('student_id',$student_id)
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Student</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('node_modules/mdi/css/materialdesignicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/node_modules/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css') }}">
     <!-- endinject -->
     <!-- plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('node_modules/rickshaw/rickshaw.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('bower_components/chartist/dist/chartist.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/node_modules/rickshaw/rickshaw.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/bower_components/chartist/dist/chartist.min.css') }}" />
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ asset('css/backend_css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/backend_css/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('images/backend_img/favicon.html') }}" />
+    <link rel="shortcut icon" href="{{ asset('public/images/backend_img/favicon.html') }}" />
 </head>
 <body class="sidebar-dark">
 <!-- partial:partials/_settings-panel.html -->
@@ -167,7 +165,9 @@ $student_info=DB::table('students')->where('student_id',$student_id)
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <div class="user-info">
                     <div class="profile">
-                        <img src="{{$student_info->student_image}}" alt="">
+
+                        <img src="{{ URL::to($student_info->student_image)}}" alt="">
+
                     </div>
                     <div class="details">
                         <p class="user-name">{{strtoupper($student_info->student_name)}}</p>
@@ -274,38 +274,38 @@ $student_info=DB::table('students')->where('student_id',$student_id)
 <!-- container-scroller -->
 
 <!-- plugins:js -->
-<script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
-<script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js') }}"></script>
+<script src="{{ asset('public/node_modules/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('public/node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
+<script src="{{ asset('public/node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('public/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js') }}"></script>
 <!-- endinject -->
 <!-- Plugin js for this page-->
-<script src="{{ asset('node_modules/flot/jquery.flot.js') }}"></script>
-<script src="{{ asset('node_modules/flot/jquery.flot.resize.js') }}"></script>
-<script src="{{ asset('node_modules/flot/jquery.flot.categories.js') }}"></script>
-<script src="{{ asset('node_modules/flot/jquery.flot.pie.js') }}"></script>
-<script src="{{ asset('node_modules/rickshaw/vendor/d3.v3.js') }}"></script>
-<script src="{{ asset('node_modules/rickshaw/rickshaw.min.js') }}"></script>
-<script src="{{ asset('bower_components/chartist/dist/chartist.min.js') }}"></script>
-<script src="{{ asset('node_modules/chartist-plugin-legend/chartist-plugin-legend.js') }}"></script>
-<script src="{{ asset('node_modules/chart.js/dist/Chart.min.js') }}"></script>
-<script src="{{ asset('node_modules/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+<script src="{{ asset('public/node_modules/flot/jquery.flot.js') }}"></script>
+<script src="{{ asset('public/node_modules/flot/jquery.flot.resize.js') }}"></script>
+<script src="{{ asset('public/node_modules/flot/jquery.flot.categories.js') }}"></script>
+<script src="{{ asset('public/node_modules/flot/jquery.flot.pie.js') }}"></script>
+<script src="{{ asset('public/node_modules/rickshaw/vendor/d3.v3.js') }}"></script>
+<script src="{{ asset('public/node_modules/rickshaw/rickshaw.min.js') }}"></script>
+<script src="{{ asset('public/bower_components/chartist/dist/chartist.min.js') }}"></script>
+<script src="{{ asset('public/node_modules/chartist-plugin-legend/chartist-plugin-legend.js') }}"></script>
+<script src="{{ asset('public/node_modules/chart.js/dist/Chart.min.js') }}"></script>
+<script src="{{ asset('public/node_modules/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 <!-- End plugin js for this page-->
 <!-- inject:js -->
-<script src="{{ asset('js/backend_js/off-canvas.js') }}"></script>
-<script src="{{ asset('js/backend_js/hoverable-collapse.js') }}"></script>
-<script src="{{ asset('js/backend_js/misc.js') }}"></script>
-<script src="{{ asset('js/backend_js/settings.js') }}"></script>
+<script src="{{ asset('public/js/backend_js/off-canvas.js') }}"></script>
+<script src="{{ asset('public/js/backend_js/hoverable-collapse.js') }}"></script>
+<script src="{{ asset('public/js/backend_js/misc.js') }}"></script>
+<script src="{{ asset('public/js/backend_js/settings.js') }}"></script>
 <!-- endinject -->
 <!-- Custom js for this page-->
-<script src="{{ asset('js/backend_js/dashboard_1.js') }}"></script>
+<script src="{{ asset('public/js/backend_js/dashboard_1.js') }}"></script>
 <!-- End custom js for this page-->
 <!-- plugins:js -->
-<script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('public/node_modules/jquery/dist/jquery.min.js') }}"></script>
 <!-- Plugin js for this page-->
-<script src="{{ asset('node_modules/datatables.net/js/jquery.dataTables.js') }}"></script>
-<script src="{{ asset('node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js') }}"></script>
-<script src="{{ asset('js/backend_js/data-table.js') }}"></script>
+<script src="{{ asset('public/node_modules/datatables.net/js/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('public/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ asset('public/js/backend_js/data-table.js') }}"></script>
 
 </body>
 

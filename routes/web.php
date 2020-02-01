@@ -38,8 +38,11 @@ Route::get('/', function () {
 
 
 //////////////When i view front page,student & admin modal login page////////////
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 Route::get('/', function () {
-    return view('welcome');
+    return view('mainBody');
 });
 
 //Route::post('/adminLogin','AdminController@dashboard');
@@ -77,6 +80,9 @@ Route::get('/', function () {
 
 //User Login
 Route::post('/userLogin','StudentController@userLogin');
+///////////////Contact Page///////////////
+Route::get('/contact','StudentController@contact')->name('/contact');
+
 
 //student Dashboard
 Route::match(['get','post'],'/student-dashboard','StudentController@index');
@@ -108,4 +114,8 @@ Route::match(['get','post'],'/subjects/delete-subject/{id}','SubjectController@d
 //Facebook Login
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
+
+//SendEmail
+Route::get('/sendmail','SendEmailController@index');
+Route::post('/sendmail/send','SendEmailController@send');
 
